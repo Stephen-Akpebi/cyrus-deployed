@@ -1,0 +1,106 @@
+{% load cart_template_tags %}
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+                <a href=""><h1 class="fw-bold text-primary m-0"><img src="" alt="">Loo<span class="text-white">zeele</span></h1></a>
+                    
+                {% comment %} {% static 'img/new.png' %} {% endcomment %}
+                {% comment %} {% url 'store:home' %} {% endcomment %}
+            
+                    
+                <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="text-white" >menu</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto p-4 p-lg-0">
+                        <a href="" class="nav-item nav-link active">Home</a>
+                        <a href="" class="nav-item nav-link"><img src="" alt=""></a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">developing</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="" class="dropdown-item">developing</a>
+                                <a href="" class="dropdown-item">developing</a>
+                                <a href="" class="dropdown-item">developing</a>
+                            </div>
+                            
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">developing</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="" class="dropdown-item">developing</a>
+                                <a href="" class="dropdown-item">developing</a>
+                                <a href="" class="dropdown-item">developing</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">developing</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="" class="dropdown-item">developing</a>
+                                <a href="" class="dropdown-item">developing</a>
+                                <a href="" class="dropdown-item">developing</a>
+                                <a href="" class="dropdown-item">developing</a>
+                                <a href="" class="dropdown-item">developing</a>
+                                <a href="" class="dropdown-item">developing</a>
+                                <a href="" class="dropdown-item">developing</a>
+                            </div>
+                            
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">developing</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="" class="dropdown-item">developing</a>
+                            </div>
+                            
+                        </div>
+                        <a href="" class="nav-item nav-link">developing</a>
+                        <ul class="navbar-nav mr-auto">
+                            {% comment %} <li class="nav-item active">
+                              <a class="nav-link waves-effect" href="/">Home
+                                <span class="sr-only">(current)</span>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link waves-effect" href="/checkout">
+                              Checkout</a>
+                            </li> {% endcomment %}
+                          </ul>
+                  
+                          <!-- Right -->
+                          <ul class="navbar-nav nav-flex-icons">
+                            {% if request.user.is_authenticated %}
+                            <li class="nav-item">
+                              <a href="{% url 'core:order-summary' %}" class="nav-link waves-effect">
+                                <span class="badge red z-depth-1 mr-1"> {{ request.user|cart_item_count }} </span>
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link waves-effect" href="{% url 'account_logout' %}">
+                                <span class="clearfix d-none d-sm-inline-block"> Logout </span>
+                              </a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                              <a class="nav-link waves-effect" href="{% url 'account_login' %}">
+                                <span class="clearfix d-none d-sm-inline-block"> Login </span>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link waves-effect" href="{% url 'account_signup' %}">
+                                <span class="clearfix d-none d-sm-inline-block"> Signup </span>
+                              </a>
+                            </li>
+                            {% endif %}
+                          </ul>
+
+
+                    </div>
+                    <div class="d-none d-lg-flex ms-2">
+                        <a class="btn btn-outline-primary py-2 px-3" href="">
+                            login
+                            <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+                                <i class="fa fa-arrow-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </nav>

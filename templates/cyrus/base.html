@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Ultra Lynks">
+<link rel="apple-touch-icon" sizes="180x180" href="{% static "cyrus/images/favicon/apple-touch-icon.png" %}">
+<link rel="icon" type="image/png" sizes="32x32" href="{% static "cyrus/images/favicon/favicon-32x32.png" %}">
+<link rel="icon" type="image/png" sizes="16x16" href="{% static "cyrus/images/favicon/favicon-16x16.png" %}">
+<link rel="manifest" href="{% static "cyrus/images/favicon/site.webmanifest" %}">
+
+  <meta name="description" content="Cyrus consumer finance, buy now pay later, hire purchase" />
+  <meta name="keywords" content="Cyrus consumer finance, buy now pay later, hire purchase" />
+
+		<!-- Bootstrap CSS -->
+		<link href="{% static "cyrus/css/bootstrap.min.css" %}" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+		<link href="{% static "cyrus/css/tiny-slider.css" %}" rel="stylesheet">
+		<link href="{% static "cyrus/css/style.css" %}" rel="stylesheet">
+		<title>Cyrus Consumer Finance</title>
+	</head>
+
+	<body>
+    
+        {% include "cyrus/nav.html" %}
+        <!-- End .header -->
+        {% block content %}
+        {% endblock content %}
+    
+        {% block extra_body %}
+        {% endblock %}
+    
+        {% include "cyrus/footer.html" %}
+        {% include "cyrus/script.html" %}
+    
+        {% block extra_scripts %}
+        {% endblock extra_scripts %}
+        <script>
+            (function(d,t) {
+              var BASE_URL="https://app.chatwoot.com";
+              var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+              g.src=BASE_URL+"/packs/js/sdk.js";
+              g.defer = true;
+              g.async = true;
+              s.parentNode.insertBefore(g,s);
+              g.onload=function(){
+                window.chatwootSDK.run({
+                  websiteToken: 'WAHDHykW1moqD4i51UTbHWv8',
+                  baseUrl: BASE_URL
+                })
+              }
+            })(document,"script");
+          </script>
+        
+    </body>
+
+    </html>

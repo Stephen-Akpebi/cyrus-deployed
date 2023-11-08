@@ -1,0 +1,161 @@
+{% extends 'store/base.html' %}
+{% block content %}
+{% load static %}
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-blog set-bg" data-setbg="{% static 'img/breadcrumb-bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Shopping Cart</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>Shopping Cart</h4>
+                        <div class="breadcrumb__links">
+                            <a href="./index.html">Home</a>
+                            <a href="./shop.html">Shop</a>
+                            <span>Shopping Cart</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Shopping Cart Section Begin -->
+    <section class="shopping-cart spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="shopping__cart__table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Product</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for order_item in object.items.all %}
+                                <tr>
+                                    <td class="product__cart__item">
+                                        <div class="product__cart__item__text">
+                                            <h6>{{ forloop.counter }}</h6>
+                                        </div>
+                                    </td>
+                                    <td class="product__cart__item">
+                                        <div class="product__cart__item__pic">
+                                            <img src="{{ order_item.item.image.url }}" alt="">
+                                            <div class="product__cart__item__text">
+                                            <h6>{{ order_item.item.title }}</h6>
+                                            <h5>${{ order_item.item.price }}</h5>
+                                        </div>
+                                        </div>
+                                    </td>
+                                    <td class="product__cart__item">
+                                        <div class="product__cart__item__text">
+                                            <h6></h6>
+                                        </div>
+                                    </td>
+                                    <td class="product__cart__item">
+                                        <div class="product__cart__item__text">
+                                            <h5></h5>
+                                        </div>
+                                    </td>
+                                    <td class="quantity__item">
+                                        <div class="quantity">
+                                            <div class="pro-qty-2">
+                                                <a href="{% url 'core:remove-single-item-from-cart' order_item.item.slug %}"><i class="fa fa-minus mr-2"></i></a> {{ order_item.quantity }}
+                                                <a href="{% url 'core:add-to-cart' order_item.item.slug %}"><i class="fa fa-plus ml-2"></i></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="cart__price">
+                                        <h6>{% if order_item.item.discount_price %} ${{ order_item.get_total_discount_item_price }}
+                                            <span class="badge badge-primary">Saving ${{ order_item.get_amount_saved }}</span> {% else %}
+                                            <h5>${{ order_item.get_total_item_price }}</h5>
+                                            {% endif %}</h6>
+                                    </td>
+                                    <td class="cart__close">
+                                        <a style='color: red;' href="{% url 'core:remove-from-cart' order_item.item.slug %}">
+                                            <i class="fa fa-close"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% empty %}
+                                    <p class="cart__price">Your cart is empty</p>
+                                {% endfor %}
+                                {% if object.coupon %}
+                                <tr>
+                                    <td colspan="4"><b>Coupon</b></td>
+                                    <td><b>-${{ object.coupon.amount }}</b></td>
+                                </tr>
+                                {% endif %}
+                                {% if object.get_total %}
+                                <tr>
+                                    <td colspan="4"><b>Order Total</b></td>
+                                    <td><b>${{ object.get_total }}</b></td>
+                                </tr>
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="continue__btn">
+                                <a href="/">Continue Shopping</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="continue__btn update__btn">
+                                <a href="{% url 'core:order-summary' %}"><i class="fa fa-spinner"></i>update cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="cart__discount">
+                        <h6>Discount codes</h6>
+                        {% if DISPLAY_COUPON_FORM %}
+                        <form class="card p-2" action="{% url 'core:add-coupon' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="input-group" type="text">
+                                {{ couponform.code }}
+                                <div class="input-group-append">
+                                <button type="submit">Redeem</button>
+                                </div>
+                            </div>
+                        </form>
+                        {% endif %}
+                    </div>
+                    <div class="cart__total">
+                        <h6>Cart total</h6>
+                        <ul>
+                            {% if object.get_total %}
+                            <li>Subtotal <span>${{ object.get_total }}</span></li>
+                            <li>Total <span>$ {{ object.get_total }}</span></li>
+                            {% endif %}
+                        </ul>
+                        <a href="/checkout/" class="primary-btn">Proceed to checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Shopping Cart Section End -->
+{% include 'store/footer.html' %}
+{% endblock content %}

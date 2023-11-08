@@ -1,0 +1,199 @@
+{% extends 'store/base.html' %}
+{% block content %}
+{% load static %}
+<section class="breadcrumb-blog set-bg" data-setbg="{% static 'img/about/about-us.jpg' %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Shop</h2>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>Shop</h4>
+                        <div class="breadcrumb__links">
+                            <a href="./index.html">Home</a>
+                            <span>Shop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Shop Section Begin -->
+    <section class="shop spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="shop__sidebar">
+                        <div class="shop__sidebar__search">
+                            <form method="get">
+                                {% comment %} <input type="{{myfilter.form.title}}" placeholder="Search..."> {% endcomment %}
+                                {{myfilter.form.title}}
+                                <button type="submit"><span class="icon_search"></span></button>
+                            </form>
+                        </div>
+                        <div class="shop__sidebar__accordion">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseOne">Categories</a>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__categories">
+                                                <ul class="nice-scroll filter__controls">
+                                                    <li class="active" data-filter="*" >All </li>
+                                                    <li data-filter=".Hand fans">Hand fans </li>
+                                                    <li data-filter=".Laptop bags">Laptop bags </li>
+                                                    <li data-filter=".Kimono and fabric">Kimono and fabric</li>
+                                                    <li data-filter=".Ipad bag">Ipad bag</li>
+                                                    <li data-filter=".Woven bagss">Woven bags</li>
+                                                    <li data-filter=".Bible bags" >Bible bags</li>
+                                                    <li data-filter=".Beads work or jewelry">Beads work or jewelry </li>
+                                                    <li data-filter=".Wallets">Wallets</li>
+                                                    <li data-filter=".Slippers">Slippers </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="shop__product__option">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="shop__product__option__left">
+                                    {% if searched %}
+                                    <p>Showing 1–10 of {{ count }} results</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="shop__product__option__right">
+                                    <p>Sort by Price:</p>
+                                    <select>
+                                        <option value="">Low To High</option>
+                                        <option value="">$0 - $55</option>
+                                        <option value="">$55 - $100</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row product__filter ">
+                        {% for item in Item %}
+                        <div class="col-lg-4 col-md-6 col-sm-6 {{ item.label }} ">
+                            <div class="product__item">
+                                <div class="product__item__pic rounded ">
+                                <a class="" href="{{ item.get_absolute_url }}"><img class="product__item__pic rounded " src="{{ item.image.url }}" alt=""></a>
+                                
+                                    <span class="label">{{ item.get_label_display }}</span>
+                                    <ul class="product__hover">
+                                        <li><a href="{{ item.get_absolute_url }}"><img src="{% static 'img/icon/heart.png' %}" alt=""></a></li>
+                                        <li><a href="{{ item.get_absolute_url }}"><img src="{% static 'img/icon/compare.png' %}" alt=""> <span>Compare</span></a>
+                                        </li>
+                                        <li><a href="{{ item.get_absolute_url }}"><img src="{% static 'img/icon/search.png' %}" alt=""></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6>{{ item.title }}</h6>
+                                    
+                                    <a href="{{ object.get_add_to_cart_url }}" class="add-cart">+ Add To Cart</a>
+                                    <div class="rating">
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+                                    {% if item.discount_price %}
+                                    <del>${{ item.price }}</del>
+                                    <h5>${{ item.discount_price }}</h5>
+                                    {% else %}
+                                    <h5>${{ item.price }}</h5>
+                                    {% endif %}
+                                    <div class="product__color__select">
+                                        <label for="pc-4">
+                                            <input type="radio" id="pc-4">
+                                        </label>
+                                        <label class="active black" for="pc-5">
+                                            <input type="radio" id="pc-5">
+                                        </label>
+                                        <label class="grey" for="pc-6">
+                                            <input type="radio" id="pc-6">
+                                        </label>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                    
+                    <div class="row">
+                        <div class="col-lg-12">
+                            {% if is_paginated %}
+                            <nav class="d-flex justify-content-center wow fadeIn">
+                                <ul class="pagination pg-blue">
+    
+                                {% if page_obj.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                    </a>
+                                </li>
+                                {% endif %}
+    
+                                <li class="page-item active">
+                                    <a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}
+                                    <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+    
+                                {% if page_obj.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                                {% endif %}
+                                </ul>
+                            </nav>
+                            {% endif %}
+                            
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Shop Section End -->
+    {% include 'store/footer.html' %}
+    <script>
+        ₦( function() {
+          ₦( "#searchbar" ).autocomplete({
+            source: '{% url 'core:shop' %}',
+            minLength: 2
+          });
+          // body...
+        })
+      </script> 
+{% endblock content %}

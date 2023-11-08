@@ -1,0 +1,106 @@
+{% comment %} <div class="col-md-12 mb-4">
+    <h4 class="d-flex justify-content-between align-items-center mb-3">
+    <span class="text-muted">Your cart</span>
+    <span class="badge badge-secondary badge-pill">{{ order.items.count }}</span>
+    </h4>
+    <ul class="list-group mb-3 z-depth-1">
+    {% for order_item in order.items.all %}
+    <li class="list-group-item d-flex justify-content-between lh-condensed">
+        <div>
+        <h6 class="my-0">{{ order_item.quantity }} x {{ order_item.item.title}}</h6>
+        <small class="text-muted">{{ order_item.item.description}}</small>
+        </div>
+        <span class="text-muted">${{ order_item.get_final_price }}</span>
+    </li>
+    {% endfor %}
+    {% if order.coupon %}
+    <li class="list-group-item d-flex justify-content-between bg-light">
+        <div class="text-success">
+        <h6 class="my-0">Promo code</h6>
+        <small>{{ order.coupon.code }}</small>
+        </div>
+        <span class="text-success">-${{ order.coupon.amount }}</span>
+    </li>
+    {% endif %}
+    <li class="list-group-item d-flex justify-content-between">
+        <span>Total (USD)</span>
+        <strong>${{ order.get_total }}</strong>
+    </li>
+    </ul>
+
+    {% if DISPLAY_COUPON_FORM %}
+    <form class="card p-2" action="{% url 'core:add-coupon' %}" method="POST">
+        {% csrf_token %}
+        <div class="input-group">
+            {{ couponform.code }}
+            <div class="input-group-append">
+            <button class="btn btn-secondary btn-md waves-effect m-0" type="submit">Redeem</button>
+            </div>
+        </div>
+    </form>
+    {% endif %}
+
+</div> {% endcomment %}
+
+<div class="col-lg-4 col-md-6">
+    <div class="checkout__order">
+        <h4 class="order__title">Your cart {{ order.items.count }}</h4>
+        <div class="checkout__order__products">Product <span>Total</span></div>
+        <ul class="checkout__total__products">
+            {% for order_item in order.items.all %}
+            <li>{{ order_item.quantity }} x {{ order_item.item.title}}  <span>${{ order_item.get_final_price }}</span></li>
+            {% endfor %}
+            
+        </ul>
+    {% if order.coupon %}
+    <li class="list-group-item d-flex justify-content-between bg-light">
+        <div class="text-success">
+        <h6 class="my-0">Promo code</h6>
+        <small>{{ order.coupon.code }}</small>
+        </div>
+        <span class="text-success">-${{ order.coupon.amount }}</span>
+    </li>
+    {% endif %}
+        <ul class="checkout__total__all">
+            <li>Subtotal (USD)<span>${{ order.get_total }}</span></li>
+            <li>Total <span>${{ order.get_total }}</span></li>
+        </ul>
+        {% comment %} <div class="checkout__input__checkbox">
+            <label for="acc-or">
+                Create an account?
+                <input type="checkbox" id="acc-or">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adip elit, sed do eiusmod tempor incididunt
+        ut labore et dolore magna aliqua.</p>
+        <div class="checkout__input__checkbox">
+            <label for="payment">
+                Check Payment
+                <input type="checkbox" id="payment">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+        <div class="checkout__input__checkbox">
+            <label for="paypal">
+                Paypal
+                <input type="checkbox" id="paypal">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+        <button type="submit" class="site-btn">PLACE ORDER</button>{% endcomment %}
+        {% comment %} {% if DISPLAY_COUPON_FORM %}
+        <form class="card p-2" action="{% url 'core:add-coupon' %}" method="POST">
+        {% csrf_token %}
+        <div class="input-group">
+            {{ couponform.code }}
+            <div class="input-group-append">
+            <button class="btn btn-secondary btn-md waves-effect m-0" type="submit">Redeem</button>
+            </div>
+        </div>
+        </form>
+        
+    {% endif %} {% endcomment %}
+    <button type="submit" class="site-btn">PLACE ORDER</button>
+    </div>
+</div>

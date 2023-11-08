@@ -1,0 +1,48 @@
+{% extends "cyrus/base.html" %}
+{% load static %}
+{% block content %}
+
+		<!-- Start Hero Section -->
+			<div class="hero">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-lg-5">
+							<div class="intro-excerpt">
+								<h1>Blog</h1>
+								<p class="mb-4">Unlocking Financial Flexibility: The Rise of Buy Now, Pay Later</p>
+								<p><a href="https://play.google.com/store/games?pli=1" class="btn btn-secondary me-2">Get The App</a><a href="{% url "core:shop" %}" class="btn btn-white-outline">Explore Store</a></p>
+							</div>
+						</div>
+						<div class="col-lg-7">
+							<div class="hero-img-wrap">
+								<img src="{% static "cyrus/images/shop10.png" %}" class="img-fluid">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- End Hero Section -->
+		<!-- Start Blog Section -->
+		<div class="blog-section">
+			<div class="container">
+				
+				<div class="row">
+					{% for blog in blog_list %}
+					<div class="col-12 col-sm-6 col-md-4 mb-5">
+						<div class="post-entry">
+							<a href="{% url 'core:blog_detail' blog.slug  %}" class="post-thumbnail"><img src="{{ blog.image.url }}" alt="Image" class="img-fluid"></a>
+							<div class="post-content-entry">
+								<h3><a href="#">{{ blog.title }}</a></h3>
+								<div class="meta">
+									<span>by <a href="{% url 'core:blog_detail' blog.slug  %}">{{ blog.author }} </a></span> <span>on <a href="{% url 'core:blog_detail' blog.slug  %}">{{ blog.created_on }}</a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		<!-- End Blog Section -->	
+
+		{% endblock content %}

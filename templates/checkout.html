@@ -1,0 +1,82 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+{% load bootstrap5 %}
+{% load static %}
+	<!-- breadcrumb -->
+	<div class="container">
+		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+			<a href="" class="stext-109 cl8 hov-cl1 trans-04">
+				Home
+				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+			</a>
+
+			<span class="stext-109 cl4">
+				Checkout
+			</span>
+		</div>
+	</div>
+		
+
+	<!-- Shoping Cart -->
+	<section class="shopping-cart spad container-xxl py-5">
+        <div class="container">
+            <div class="checkout__form">
+                <form method="POST" >
+                    {% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-8 col-md-6">
+                                <h6 class="coupon__code"><span class="icon_tag_alt"></span> Have a coupon? <a href="#">Click
+                                here</a> to enter your code</h6>
+                                <h6 class="checkout__title">shipping Details</h6>
+                                {% bootstrap_form form %}
+                                <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+                            </div>
+                            {% include 'order_snippet.html' %}
+                            <hr>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+		
+	
+		
+
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="zmdi zmdi-chevron-up"></i>
+		</span>
+	</div>
+	{% include 'store/footer.html' %}
+    {% endblock content %}
+    {% block extra_scripts %}
+    <script>
+    var hideable_shipping_form = $('.hideable_shipping_form');
+    var hideable_billing_form = $('.hideable_billing_form');
+
+    var use_default_shipping = document.querySelector("input[name=use_default_shipping]");
+    var use_default_billing = document.querySelector("input[name=use_default_billing]");
+
+    use_default_shipping.addEventListener('change', function() {
+    if (this.checked) {
+      hideable_shipping_form.hide();
+    } else {
+      hideable_shipping_form.show();
+    }
+    })
+
+    use_default_billing.addEventListener('change', function() {
+    if (this.checked) {
+      hideable_billing_form.hide();
+    } else {
+      hideable_billing_form.show();
+    }
+    })
+
+    </script>
+    {% endblock extra_scripts %}
+    
+ontent %}

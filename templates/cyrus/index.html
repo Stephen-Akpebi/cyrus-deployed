@@ -1,0 +1,469 @@
+{% extends "cyrus/base.html" %}
+{% load static %}
+{% block content %}
+
+		<!-- Start Hero Section -->
+			<div class="hero">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-lg-5">
+							<div class="intro-excerpt">
+								<h1>Shop with freedom, pay with flexibility,<span clsas="d-block">and discover a whole new way to enjoy your purchases.</span></h1>
+								<p class="mb-4">Cyrus Consumer Finance is your gateway to a world of smarter
+									shopping and stress-free payments.</p>
+								<p><a href="https://play.google.com/store/games?pli=1" class="btn btn-secondary me-2">Get The App</a><a href="{% url "core:shop" %}" class="btn btn-white-outline">Explore Store</a></p>
+							</div>
+						</div>
+						<div class="col-lg-7">
+							<div class="hero-img-wrap">
+								<img src="{% static "cyrus/images/design/header.PNG" %}" class="img-fluid">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- End Hero Section -->
+
+		<!-- Start Product Section -->
+		<div class="product-section">
+			<div class="container">
+				<div class="row">
+
+					<!-- Start Column 1 -->
+					<div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
+						<h2 class="mb-4 section-title">Welcome to a shopping experience like never before</h2>
+						<p class="mb-4">With Cyrus Consumer Finance, you can shop with the freedom you deserve and pay with unmatched flexibility. It's time to reimagine the way you make your purchases.</p>
+						<p><a href="{% url "core:shop" %}" class="btn">Explore</a></p>
+					</div> 
+					<!-- End Column 1 -->
+
+					<!-- Start Column 2 -->
+					{% for item in Item %}
+					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+						<a class="product-item" href="{{ item.get_absolute_url }}">
+							<img src="{{ item.image.url }}" class="img-fluid product-thumbnail">
+							<h3 class="product-title">{{ item.title }}</h3>
+							<strong class="product-price">{% if item.discount_price %}
+								<del>₵{{ item.price }}</del>
+								₵{{ item.discount_price }}
+								{% else %}
+								₵{{ item.price }}
+								{% endif %}</strong>
+
+							<span class="icon-cross">
+								<img src="{% static "cyrus/images/cross.svg" %}" class="img-fluid">
+							</span>
+						</a>
+					</div> 
+					{% endfor %}
+					<!-- End Column 2 -->
+				</div>
+			</div>
+		</div>
+		<!-- End Product Section -->
+
+		<!-- Start Why Choose Us Section -->
+		<div class="why-choose-section">
+			<div class="container">
+				<div class="row justify-content-between">
+					<div class="col-lg-6">
+						<h2 class="section-title">Why Choose Us</h2>
+						<p>Shop with confidence knowing we’ve got your financial security covered, Make smart purchases that help build your credit for a brighter financial future.</p>
+
+						<div class="row my-5">
+							<div class="col-6 col-md-6">
+								<div class="feature">
+									<div class="icon">
+										<img src="{% static "cyrus/images/truck.svg" %}" alt="Image" class="imf-fluid">
+									</div>
+									<h3>A wide range of stores to shop from</h3>
+									<p>We offer a wide range of stores to shop from, so you can find everything you need in one place.</p>
+								</div>
+							</div>
+
+							<div class="col-6 col-md-6">
+								<div class="feature">
+									<div class="icon">
+										<img src="{% static "cyrus/images/bag.svg" %}" alt="Image" class="imf-fluid">
+									</div>
+									<h3>Shop Now, Pay Later</h3>
+									<p>Don't let waiting stand in the way of your desires. Get what you want when you want it, with no unnecessary delays.</p>
+								</div>
+							</div>
+
+							<div class="col-6 col-md-6">
+								<div class="feature">
+									<div class="icon">
+										<img src="{% static "cyrus/images/support.svg" %}" alt="Image" class="imf-fluid">
+									</div>
+									<h3>24/7 Support</h3>
+									<p>24/7 Customer Support Questions or concerns? Our dedicated customer support team is here to assist you around the clock.</p>
+								</div>
+							</div>
+
+							<div class="col-6 col-md-6">
+								<div class="feature">
+									<div class="icon">
+										<img src="{% static "cyrus/images/return.svg" %}" alt="Image" class="imf-fluid">
+									</div>
+									<h3>KeepMyPrice 30-Days Layaway</h3>
+									<p>Lock in your desired item at its current price for 30 days, giving you time to budget and pay at your convenience.</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="col-lg-5">
+						<div class="img-wrap">
+							<img src="{% static "cyrus/images/why-choose-us-img.jpg" %}" alt="Image" class="img-fluid">
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- End Why Choose Us Section -->
+
+		<!-- Start We Help Section -->
+		<div class="we-help-section">
+			<div class="container">
+				<div class="row justify-content-between">
+					<div class="col-lg-7 mb-5 mb-lg-0">
+						<div class="imgs-grid">
+							<div class="grid grid-1"><img src="{% static "cyrus/images/img-grid-1.jpg" %}" alt="cyrus"></div>
+							<div class="grid grid-2"><img src="{% static "cyrus/images/img-grid-2.jpg" %}" alt="Cyrus"></div>
+							<div class="grid grid-3"><img src="{% static "cyrus/images/img-grid-3.jpg" %}" alt="cyrus"></div>
+						</div>
+					</div>
+					<div class="col-lg-5 ps-lg-5">
+						<h2 class="section-title mb-4">Easy-peas financing at your fingertips</h2>
+						<p>Join the future of shopping with Cyrus Consumer Finance. Shopping today and paying tomorrow has never been this easy!, Get started today switch to cyrus now.</p>
+
+						<ul class="list-unstyled custom-list my-4">
+							<li>Shop confidently knowing that our Buyer Protection program has you covered.
+								We've got your back in case of damaged goods or disputes.</li>
+							<li>We're all about transparency
+								Say goodbye to hidden interest rates and surprise fees At Cyrus Consumer Finance, we believe in straightforward and honest pricing.</li>
+							<li>Your financial security is our priority. Rest easy knowing that your data is protected,
+								and our app is designed for simplicity, making your shopping experience as smooth as possible.</li>
+							<li>Enjoy the power to choose how and when you pay. Our flexible payment plans put you in charge, so you can shop without worry.</li>
+						</ul>
+						<p><a herf="{% url "core:shop" %}" class="btn">Explore</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End We Help Section -->
+
+		<!-- Start Popular Product -->
+		<div class="popular-product">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+						<div class="product-item-sm d-flex">
+							<div class="thumbnail">
+								<img src="{% static "cyrus/images/product-1.png" %}" alt="Image" class="img-fluid">
+							</div>
+							<div class="pt-3">
+								<h3>Nordic Chair</h3>
+								<p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio </p>
+								<p><a href="{% url "core:shop" %}">More</a></p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+						<div class="product-item-sm d-flex">
+							<div class="thumbnail">
+								<img src="{% static "cyrus/images/shop3.png" %}" alt="Image" class="img-fluid">
+							</div>
+							<div class="pt-3">
+								<h3>Sumsung Phones</h3>
+								<p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio </p>
+								<p><a href="{% url "core:shop" %}">More</a></p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+						<div class="product-item-sm d-flex">
+							<div class="thumbnail">
+								<img src="{% static "cyrus/images/shop6.png" %}" alt="Image" class="img-fluid">
+							</div>
+							<div class="pt-3">
+								<h3>Apple MacBooks</h3>
+								<p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio </p>
+								<p><a href="{% url "core:shop" %}">More</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Popular Product -->
+
+		<!-- Start Testimonial Slider -->
+		<div class="testimonial-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-7 mx-auto text-center">
+						<h2 class="section-title">Testimonials</h2>
+					</div>
+				</div>
+
+				<div class="row justify-content-center">
+					<div class="col-lg-12">
+						<div class="testimonial-slider-wrap text-center">
+
+							<div id="testimonial-nav">
+								<span class="prev" data-controls="prev"><span class="fa fa-chevron-left"></span></span>
+								<span class="next" data-controls="next"><span class="fa fa-chevron-right"></span></span>
+							</div>
+
+							<div class="testimonial-slider">
+								
+								<div class="item">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+
+											<div class="testimonial-block text-center">
+												<blockquote class="mb-5">
+													<p>&ldquo; - "I love using Cyrus Consumer Finance for my shopping needs! It has made shopping so much more convenient for me. I can grab the latest fashion trends without worrying about immediate payments. The easy repayment options and low fees of Cyrus Consumer Finance have truly improved my shopping experience."&rdquo;</p>
+												</blockquote>
+
+												<div class="author-info">
+													<div class="author-pic">
+														<img src="{% static "cyrus/images/person-1.png" %}" alt="Maria Jones" class="img-fluid">
+													</div>
+													<h3 class="font-weight-bold">cyrus</h3>
+													<span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div> 
+								<!-- END item -->
+
+								<div class="item">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+
+											<div class="testimonial-block text-center">
+												<blockquote class="mb-5">
+													<p>&ldquo;- "I can't imagine going back to traditional shopping after using Cyrus Consumer Finance. It's user-friendly, and the flexibility it offers with payments is a game-changer. I've made some significant purchases without a second thought, and it's been a lifesaver for managing my budget."&rdquo;</p>
+												</blockquote>
+
+												<div class="author-info">
+													<div class="author-pic">
+														<img src="{% static "cyrus/images/person-1.png" %}" alt="Maria Jones" class="img-fluid">
+													</div>
+													<h3 class="font-weight-bold">cyrus</h3>
+													<span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div> 
+								<!-- start item -->
+
+								<div class="item">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+
+											<div class="testimonial-block text-center">
+												<blockquote class="mb-5">
+													<p>&ldquo; - "Cyrus Consumer Finance has given me the freedom to shop without the financial stress. I've used it for everything from electronics to home furnishings, and it's always delivered a seamless experience. Plus, their responsive customer support team provides peace of mind, knowing they're there to assist if needed."&rdquo;</p>
+												</blockquote>
+
+												<div class="author-info">
+													<div class="author-pic">
+														<img src="{% static "cyrus/images/person-1.png" %}" alt="Maria Jones" class="img-fluid">
+													</div>
+													<h3 class="font-weight-bold">cyrus</h3>
+													<span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div> 
+								<!-- END item -->
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Testimonial Slider -->
+		<!-- ======= Frequently Asked Questions Section ======= -->
+	<section id="faq" class="faq">
+		<div class="container" data-aos="fade-up">
+	
+			<div class="row gy-4">
+	
+			<div class="col-lg-4">
+				<div class="content px-xl-5">
+				<h3>Frequently Asked <strong>Questions</strong></h3>
+				<p>
+					Welcome to our Frequently Asked Questions (FAQs) section for Cyrus Consumer Finance, your go-to Buy Now, Pay Later app. We understand that you might have questions about how our app works and how it can benefit you. To assist you, we’ve compiled a list of common queries and provided detailed answers.
+				</p>
+				</div>
+			</div>
+	
+			<div class="col-lg-8">
+	
+				<div class="accordion accordion-flush" id="faqlist" data-aos="fade-up" data-aos-delay="100">
+	
+				<div class="accordion-item">
+					<h3 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
+						<span class="num">1.</span>
+						How does Buy Now, Pay Later work?
+					</button>
+					</h3>
+					<div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+					<div class="accordion-body">
+						- Buy Now, Pay Later is a payment method that allows you to make purchases and receive your items immediately, while spreading the cost of your purchase into manageable installments. You can select the "Buy Now, Pay Later" option at checkout, and the app will handle the payment arrangement for you.
+					</div>
+					</div>
+				</div><!-- # Faq item-->
+	
+				<div class="accordion-item">
+					<h3 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
+						<span class="num">2.</span>
+						Is there interest or fees associated with using the app?
+					</button>
+					</h3>
+					<div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+					<div class="accordion-body">
+						- Interest rates and fees can vary depending on the app and the specific terms of your purchase. Some apps offer interest-free options if you repay within a certain period. Be sure to check the terms and conditions for each transaction.
+					</div>
+					</div>
+				</div><!-- # Faq item-->
+	
+				<div class="accordion-item">
+					<h3 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
+						<span class="num">3.</span>
+						What stores or online retailers accept the Buy Now, Pay Later app?
+					</button>
+					</h3>
+					<div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+					<div class="accordion-body">
+						- Our app is widely accepted at a variety of online and physical stores, including major retailers and e-commerce platforms. You can check the app to see a list of supported merchants or simply look for the "Buy Now, Pay Later" option at checkout.
+					</div>
+					</div>
+				</div><!-- # Faq item-->
+	
+				<div class="accordion-item">
+					<h3 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-4">
+						<span class="num">4.</span>
+						What are the repayment terms and options available?
+					</button>
+					</h3>
+					<div id="faq-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+					<div class="accordion-body">
+						- Repayment terms depend on your app's policies and the specific purchase. Typically, you can choose from various installment options, such as weekly or monthly payments. The app will provide details on repayment schedules and amounts.
+					</div>
+					</div>
+				</div><!-- # Faq item-->
+	
+				<div class="accordion-item">
+					<h3 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-5">
+						<span class="num">5.</span>
+						Is there a credit check or approval process for using the app?
+					</button>
+					</h3>
+					<div id="faq-content-5" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+					<div class="accordion-body">
+						- Many Buy Now, Pay Later apps perform a quick credit assessment during the checkout process. However, this doesn't always result in a hard credit check that affects your credit score. Approval is often quick and straightforward, and even users with limited credit history may be eligible to use the app.
+					</div>
+					</div>
+				</div><!-- # Faq item-->
+	
+				</div>
+	
+			</div>
+			</div>
+	
+		</div>
+		</section><!-- End Frequently Asked Questions Section -->
+
+		<!-- Start Blog Section -->
+		<div class="blog-section">
+			<div class="container">
+				<div class="row mb-5">
+					<div class="col-md-6">
+						<h2 class="section-title">Recent Blog</h2>
+					</div>
+					<div class="col-md-6 text-start text-md-end">
+						<a href="#" class="more">View All Posts</a>
+					</div>
+				</div>
+
+				<div class="row">
+
+					<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+						<div class="post-entry">
+							<a href="#" class="post-thumbnail"><img src="{% static "cyrus/images/post-1.jpg" %}" alt="Image" class="img-fluid"></a>
+							<div class="post-content-entry">
+								<h3><a href="#">First Time Home Owner Ideas</a></h3>
+								<div class="meta">
+									<span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 19, 2024</a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+						<div class="post-entry">
+							<a href="#" class="post-thumbnail"><img src="{% static "cyrus/images/post-2.jpg" %}" alt="Image" class="img-fluid"></a>
+							<div class="post-content-entry">
+								<h3><a href="#">How To Keep Your Furniture Clean</a></h3>
+								<div class="meta">
+									<span>by <a href="#">Robert Fox</a></span> <span>on <a href="#">Dec 15, 2024</a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+						<div class="post-entry">
+							<a href="#" class="post-thumbnail"><img src="{% static "cyrus/images/post-3.jpg" %}" alt="Image" class="img-fluid"></a>
+							<div class="post-content-entry">
+								<h3><a href="#">Small Space Furniture Apartment Ideas</a></h3>
+								<div class="meta">
+									<span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 12, 2024</a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 text-center pt-5">
+							<span class="display-3 thankyou-icon text-primary">
+								<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart-check mb-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								  <path fill-rule="evenodd" d="M11.354 5.646a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+								  <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+								</svg>
+							  </span>
+							  <h2 class="display-3 text-black">Get started!</h2>
+							  <p class="lead mb-5">Download cyrus consumer app to start enjoying a good live with different payment options.</p>
+						<p><a href="https://www.apple.com/app-store/" class="btn btn-sm btn-outline-black"><img src="https://motito.co/images/Mobile-app-store-badge-1.png" class="img-fluid"></a><a href="https://play.google.com/store/games?pli=1" class="btn btn-sm btn-outline-black"><img src="https://motito.co/images/Mobile-app-store-badge.png" class="img-fluid"></a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Blog Section -->	
+		
+
+{% endblock content %}

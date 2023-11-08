@@ -1,0 +1,38 @@
+{% load static %}
+<!-- Start Header/Navigation -->
+<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+
+    <div class="container">
+        <a class="navbar-brand" href="">
+            Cyrus<span>.<span>
+        </a>
+        {% comment %} <a href="https://play.google.com/store/games?pli=1" class="btn btn-secondary me-2 navbar-brand" >Get The App</a> {% endcomment %}
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsFurni">
+            <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url "core:home" %}">Home</a>
+                </li>
+                <li><a class="nav-link" href="{% url "core:shop" %}">Shop</a></li>
+                <li><a class="nav-link" href="{% url "core:about" %}">About us</a></li>
+                <li><a class="nav-link" href="{% url "core:service" %}">Services</a></li>
+                <li><a class="nav-link" href="{% url "core:blog" %}">Blog</a></li>
+                <li><a class="nav-link" href="{% url "core:contact" %}">Contact us</a></li>
+            </ul>
+            {% load cart_template_tags %}
+            <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+                {% if request.user.is_authenticated %}
+                <li><a class="nav-link" href="{% url 'account_logout' %}"><i class="fa fa-sign-out"></i></a></li>
+                <li><a class="nav-link" data-notify="{{ request.user|cart_item_count }}" href="{% url "core:order-summary" %}"><img src="{% static "cyrus/images/cart.svg" %}"></a></li>
+                {% else %}
+                <li><a class="nav-link" href="{% url "account_login" %}"><img src="{% static "cyrus/images/user.svg" %}"></a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+        
+</nav>
+<!-- End Header/Navigation -->

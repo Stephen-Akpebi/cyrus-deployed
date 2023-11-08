@@ -1,0 +1,132 @@
+{% load cart_template_tags %}
+{% load static %}
+            <nav class="navbar navbar-expand-lg navbar-dark py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+                {% comment %} <a href="{% url 'core:home' %}"><img src="{% static 'img/new.png' %}" alt=""></a> {% endcomment %}
+                    
+            
+                    
+                <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="text-white" >menu</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto p-4 p-lg-0">
+                        <a href="{% url 'core:home' %}" class="nav-item nav-link active fa fa-store-alt">Home</a>
+                        <a href="/shop" class="nav-item nav-link fa fa-store-alt ">Shop</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link fa fa-store-alt" data-bs-toggle="dropdown">developing</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="" class="dropdown-item">developing  developing</a>
+                                <a href="" class="dropdown-item">developing</a>
+                                <a href="" class="dropdown-item">developing</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link fa fa-store-alt" data-bs-toggle="dropdown">Blog</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="/blog" class="dropdown-item">Blog</a>
+                            </div>
+                            
+                        </div>
+                        
+                        <ul class="navbar-nav mr-auto">
+                            {% comment %} <li class="nav-item active">
+                              <a class="nav-link waves-effect" href="/">Home
+                                <span class="sr-only">(current)</span>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link waves-effect" href="/checkout">
+                              Checkout</a>
+                            </li> {% endcomment %}
+                          </ul>
+                  
+                          <!-- Right -->
+                          {% if user.is_authenticated %}
+                          <div class="nav-item dropdown">
+                              <a href="#" class="nav-link fa fa-user " data-bs-toggle="dropdown"> {{request.user}}</a>
+                              <div class="dropdown-menu m-0 ">
+                                  
+                                    <div class="card-body text-center">
+                                      <div class="mt-3 mb-4">
+                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                                          class="rounded-circle img-fluid" style="width: 100px;" />
+                                      </div>
+                                      <h4 class="mb-2">{{request.user}}</h4>
+                                      <p class="text-muted mb-4">@Programmer <span class="mx-2">|</span> <a
+                                          href="#!">loozeele</a></p>
+                                      <div class="mb-4 pb-2">
+                                        <button type="button" class="btn btn-outline-primary btn-floating">
+                                          <i class="fab fa-facebook-f fa-lg"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-outline-primary btn-floating">
+                                          <i class="fab fa-twitter fa-lg"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-outline-primary btn-floating">
+                                          <i class="fab fa-skype fa-lg"></i>
+                                        </button>
+                                      </div>
+                                      <button type="button" class="btn btn-primary btn-rounded btn-lg">
+                                        Account
+                                      </button>
+                                      <div class="d-flex justify-content-between text-center mt-5 mb-2">
+                                        <div>
+                                          <p class="mb-2 h5">8471</p>
+                                          <p class="text-muted mb-0">Wallets Balance</p>
+                                        </div>
+                                        <div class="px-3">
+                                          <p class="mb-2 h5">8512</p>
+                                          <p class="text-muted mb-0">Income amounts</p>
+                                        </div>
+                                        <div>
+                                          <p class="mb-2 h5">4751</p>
+                                          <p class="text-muted mb-0">Total Transactions</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  
+                                  
+                              </div>
+                              
+                          </div>
+                          {% endif %}
+                          
+                            {% if request.user.is_authenticated %}
+                            
+                              <a href="{% url 'core:order-summary' %}" class="nav-item nav-link fa fa-store-alt">
+                                <span class="badge badge-danger"> {{ request.user|cart_item_count }} </span>
+                                <i class="fa fa-shopping-cart"></i>
+                                 Cart
+                              </a>
+                            
+                            
+                              <a class="nav-item nav-link" href="{% url 'account_logout' %}">
+                                <span class="clearfix d-none d-sm-inline-block fa fa-sign-out"> Logout </span>
+                              </a>
+                            
+                            {% else %}
+                            
+                              <a class="nav-item nav-link" href="{% url 'account_login' %}">
+                                <span class="clearfix d-none d-sm-inline-block fa fa-sign-in"> Login </span>
+                              </a>
+                            
+                            
+                              <a class="nav-item nav-link" href="{% url 'account_signup' %}">
+                                <span class="clearfix d-none d-sm-inline-block fa fa-sign-in"> Signup </span>
+                              </a>
+                            
+                            {% endif %}
+                          
+                          
+                          
+                    </div>
+                    <div class="d-none d-lg-flex ms-2">
+                        <a class="btn btn-outline-primary py-2 px-3 search-switch fa fa-store-alt" href="#">
+                            search
+                            <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </nav>

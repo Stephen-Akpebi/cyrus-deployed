@@ -1,0 +1,80 @@
+{% extends 'store/base.html' %}
+{% block content %}
+{% load static %}
+	<!-- Title page -->
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('{% static 'store/images/bg-01.jpg' %}');">
+		<h2 class="ltext-105 cl0 txt-center">
+			About Us
+		</h2>
+	</section>	
+
+
+	<!-- Content page -->
+	<section class="bg0 p-t-75 p-b-120">
+		<div class="container">
+			<div class="row p-b-148">
+				<div class="col-md-7 col-lg-8">
+					<div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
+						<h3 class="mtext-111 cl2 p-b-16">
+							Loozeele initiative
+						</h3>
+
+						<p class="stext-113 cl6 p-b-26">
+							The daily life of a kayayoo (head porter) in Ghana is one of misery, suffering and above all uncertainty. 
+                            Yet, young adults especially girls from the northern parts of Ghana, especially the Upper East Region are constantly attracted to this way of life believing that it is the only way to cater for themselves and their families.
+						</p>
+						<h3 class="mtext-111 cl2 p-b-16">
+							Vision
+						</h3>
+						<p class="stext-113 cl6 p-b-26">
+							To reduce rural urban migration among young women from the north of Ghana and create employment opportunities for them by using the skills and materials available in their communities. Our vision is to drive a new era of development and growth and build sustainable businesses for women in the North.
+						</p>
+
+						
+					</div>
+				</div>
+
+				<div class="col-11 col-md-5 col-lg-4 m-lr-auto">
+					<div class="how-bor1 ">
+						<div class="hov-img0">
+							<img src="{% static 'images/about-01.jpg' %}" alt="IMG">
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="order-md-2 col-md-7 col-lg-8 p-b-30">
+					<div class="p-t-7 p-l-85 p-l-15-lg p-l-0-md">
+						<h3 class="mtext-111 cl2 p-b-16">
+							Our Mission
+						</h3>
+
+						<p class="stext-113 cl6 p-b-26">
+							The mission of the Loozeele Initiative is to develop the capabilities of young people in the north of Ghana by helping them to create businesses that will provide a source of income using their skills to make and sell products and providing entrepreneurial support for Kayayei.
+						</p>
+
+						<div class="bor16 p-l-29 p-b-9 m-t-22">
+							<p class="stext-114 cl6 p-r-40 p-b-11">
+								Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn't really do it, they just saw something. It seemed obvious to them after a while.
+							</p>
+
+							<span class="stext-111 cl8">
+								- Steve Job’s 
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="order-md-1 col-11 col-md-5 col-lg-4 m-lr-auto p-b-30">
+					<div class="how-bor2">
+						<div class="hov-img0">
+							<img src="{% static 'store/images/photo3.jpg' %}" alt="IMG">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>	
+	{% include 'store/footer.html' %}
+    {% endblock content %}
