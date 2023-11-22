@@ -1,8 +1,95 @@
 {% extends "cyrus/base.html" %}
 {% load static %}
 {% block content %}
+<div class="owl-carousel owl-single home-slider">
+	<div class="item">
+		<div class="untree_co-hero" style="background-image: url('{% static "cyrus/images/hd2.jpg" %}');">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
 
-		<!-- Start Hero Section -->
+						<h1 class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">Buy products the easy way with Cyrus Consumer Finance</h1>
+						<div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
+						</div>
+
+						
+						<p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="https://play.google.com/store/games?pli=1" class="btn btn-secondary me-2 rounded">Get The App</a><a href="{% url "core:shop" %}" class="btn rounded btn-white-outline">Explore Store</a></p>
+					</div>
+				</div>
+			</div>
+		</div> <!-- /.ultralynks-hero -->
+	</div>
+
+
+	<div class="item">
+		<div class="untree_co-hero" style="background-image: url('{% static "cyrus/images/hd1.jpg" %}');">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+
+						<h1 class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">Shop with freedom, pay with flexibility,<span clsas="d-block">and discover a whole new way to enjoy your purchases.</span></h1>
+						<div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
+						</div>
+						<div class="col-lg-7">
+							<div class="hero-img-wrap">
+								
+							</div>
+						</div>
+						
+						<p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="https://play.google.com/store/games?pli=1" class="btn btn-secondary me-2 rounded">Get The App</a><a href="{% url "core:shop" %}" class="btn rounded btn-white-outline">Explore Store</a></p>
+
+					</div>
+				</div>
+			</div>
+		</div> <!-- /.ultralynks-hero -->
+	</div>
+	<div class="item">
+		<div class="untree_co-hero" style="background-image: url('{% static "cyrus/images/hd3.jpg" %}');">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+
+						<h1 class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">Shop with freedom, pay with flexibility,<span clsas="d-block">and discover a whole new way to enjoy your purchases.</span></h1>
+						<div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
+						</div>
+						<div class="col-lg-7">
+							<div class="hero-img-wrap">
+								
+							</div>
+						</div>
+						
+						<p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="https://play.google.com/store/games?pli=1" class="btn btn-secondary me-2 rounded">Get The App</a><a href="{% url "core:shop" %}" class="btn rounded btn-white-outline">Explore Store</a></p>
+
+					</div>
+				</div>
+			</div>
+		</div> <!-- /.ultralynks-hero -->
+	</div>
+	<div class="item">
+		<div class="untree_co-hero" style="background-image: url('{% static "cyrus/images/hd4.jpg" %}');">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+
+						<h1 class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">Shop with freedom, pay with flexibility,<span clsas="d-block">and discover a whole new way to enjoy your purchases.</span></h1>
+						<div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
+						</div>
+						<div class="col-lg-7">
+							<div class="hero-img-wrap">
+								
+							</div>
+						</div>
+						
+						<p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="https://play.google.com/store/games?pli=1" class="btn btn-secondary me-2 rounded">Get The App</a><a href="{% url "core:shop" %}" class="btn rounded btn-white-outline">Explore Store</a></p>
+
+					</div>
+				</div>
+			</div>
+		</div> <!-- /.ultralynks-hero -->
+	</div>
+	
+</div>
+		{% comment %} <!-- Start Hero Section -->
 			<div class="hero">
 				<div class="container">
 					<div class="row justify-content-between">
@@ -11,7 +98,7 @@
 								<h1>Shop with freedom, pay with flexibility,<span clsas="d-block">and discover a whole new way to enjoy your purchases.</span></h1>
 								<p class="mb-4">Cyrus Consumer Finance is your gateway to a world of smarter
 									shopping and stress-free payments.</p>
-								<p><a href="https://play.google.com/store/games?pli=1" class="btn btn-secondary me-2">Get The App</a><a href="{% url "core:shop" %}" class="btn btn-white-outline">Explore Store</a></p>
+								<p><a href="https://play.google.com/store/games?pli=1" class="btn btn-secondary me-2 rounded">Get The App</a><a href="{% url "core:shop" %}" class="btn rounded btn-white-outline">Explore Store</a></p>
 							</div>
 						</div>
 						<div class="col-lg-7">
@@ -21,7 +108,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> {% endcomment %}
 		<!-- End Hero Section -->
 
 		<!-- Start Product Section -->
@@ -33,7 +120,7 @@
 					<div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
 						<h2 class="mb-4 section-title">Welcome to a shopping experience like never before</h2>
 						<p class="mb-4">With Cyrus Consumer Finance, you can shop with the freedom you deserve and pay with unmatched flexibility. It's time to reimagine the way you make your purchases.</p>
-						<p><a href="{% url "core:shop" %}" class="btn">Explore</a></p>
+						<p><a href="{% url "core:shop" %}" class="btn rounded">Explore</a></p>
 					</div> 
 					<!-- End Column 1 -->
 
@@ -149,7 +236,7 @@
 								and our app is designed for simplicity, making your shopping experience as smooth as possible.</li>
 							<li>Enjoy the power to choose how and when you pay. Our flexible payment plans put you in charge, so you can shop without worry.</li>
 						</ul>
-						<p><a herf="{% url "core:shop" %}" class="btn">Explore</a></p>
+						<p><a herf="{% url "core:shop" %}" class="btn rounded">Explore</a></p>
 					</div>
 				</div>
 			</div>

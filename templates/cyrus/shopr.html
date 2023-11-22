@@ -1,0 +1,51 @@
+{% extends "cyrus/base.html" %}
+{% load static %}
+{% block content %}
+		<!-- Start Hero Section -->
+			<div class="hero">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-lg-5">
+							<div class="intro-excerpt">
+								<h1>Shop</h1>
+							</div>
+						</div>
+						<div class="col-lg-7">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- End Hero Section -->
+
+		
+
+		<div class="untree_co-section product-section before-footer-section">
+		    <div class="container">
+		      	<div class="row">
+
+		      		<!-- Start Column 1 -->
+					  {% for item in Item %}
+					<div class="col-12 col-md-4 col-lg-3 mb-5">
+						<a class="product-item" href="{{ item.get_absolute_url }}">
+							<img src="{{ item.image.url }}" class="img-fluid product-thumbnail">
+							<h3 class="product-title">{{ item.title }}</h3>
+							<strong class="product-price">{% if item.discount_price %}
+								<del>₵{{ item.price }}</del>
+								₵{{ item.discount_price }}
+								{% else %}
+								₵{{ item.price }}
+								{% endif %}</strong>
+
+							<span class="icon-cross">
+								<img src="{% static "cyrus/images/cross.svg" %}" class="img-fluid">
+							</span>
+						</a>
+					</div> 
+					{% endfor %}
+					<!-- End Column 1 -->
+		      	</div>
+		    </div>
+		</div>
+
+		{% endblock content %}

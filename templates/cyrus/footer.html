@@ -2,14 +2,11 @@
 <!-- Start Footer Section -->
 <footer class="footer-section">
     <div class="container relative">
-        <div class="sofa-img">
-            <img src="{% static "cyrus/images/design/IMG_2964.PNG" %}" alt="Image" class="img-fluid">
-        </div>
+        
         <div class="row">
             <div class="col-lg-8">
                 <div class="subscription-form">
                     <h3 class="d-flex align-items-center"><span class="me-1"><img src="{% static "cyrus/images/envelope-outline.svg" %}" alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
-
                     <form action="#" class="row g-3">
                         <div class="col-auto">
                             <input type="text" class="form-control" placeholder="Enter your name">
@@ -23,12 +20,13 @@
                             </button>
                         </div>
                     </form>
+                    
                 </div>
             </div>
         </div>
         <div class="row g-5 mb-5">
             <div class="col-lg-4">
-                <div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Cyrus<span>.</span></a></div>
+                <div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo"><img src="{% static "cyrus/images/footer.png" %}" alt="Image" class="img-fluid"><img src="{% static "cyrus/images/adfooter.png" %}" alt="Image" class="img-fluid"></a></div>
                 <p class="mb-4">Reid Bethunie Building
                     2nd Floor, Vertical Square
                     Adjacent Hotel Joecarl
@@ -104,5 +102,11 @@
         </div>
 
     </div>
+    <div id="overlayer"></div>
+	<div class="loader">
+		<div class="spinner-border" role="status">
+			<span class="sr-only">Loading...</span>
+		</div>
+	</div>
 </footer>
 <!-- End Footer Section -->	

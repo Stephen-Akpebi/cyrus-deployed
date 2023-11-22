@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Ultra Lynks">
 <link rel="apple-touch-icon" sizes="180x180" href="{% static "cyrus/images/favicon/apple-touch-icon.png" %}">
-<link rel="icon" type="image/png" sizes="32x32" href="{% static "cyrus/images/favicon/favicon-32x32.png" %}">
-<link rel="icon" type="image/png" sizes="16x16" href="{% static "cyrus/images/favicon/favicon-16x16.png" %}">
+<link rel="icon" type="image/png" sizes="32x32" href="{% static "cyrus/images/favicon/android-chrome-512x512.png" %}">
+<link rel="icon" type="image/png" sizes="16x16" href="{% static "cyrus/images/favicon/android-chrome-192x192.png" %}">
 <link rel="manifest" href="{% static "cyrus/images/favicon/site.webmanifest" %}">
 
   <meta name="description" content="Cyrus consumer finance, buy now pay later, hire purchase" />
@@ -18,6 +18,15 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 		<link href="{% static "cyrus/css/tiny-slider.css" %}" rel="stylesheet">
 		<link href="{% static "cyrus/css/style.css" %}" rel="stylesheet">
+    
+	<link rel="stylesheet" href="{% static "cyrus/shop/css/animate.min.css" %}">
+	<link rel="stylesheet" href="{% static "cyrus/shop/css/owl.carousel.min.css" %}">
+	<link rel="stylesheet" href="{% static "cyrus/shop/css/owl.theme.default.min.css" %}">
+	<link rel="stylesheet" href="{% static "cyrus/shop/css/jquery.fancybox.min.css" %}">
+	<link rel="stylesheet" href="{% static "cyrus/shop/fonts/icomoon/style.css" %}">
+	<link rel="stylesheet" href="{% static "cyrus/shop/fonts/flaticon/font/flaticon.css" %}">
+	<link rel="stylesheet" href="{% static "cyrus/shop/css/aos.css" %}">
+	<link rel="stylesheet" href="{% static "cyrus/shop/css/style.css" %}">
 		<title>Cyrus Consumer Finance</title>
 	</head>
 
@@ -26,6 +35,7 @@
         {% include "cyrus/nav.html" %}
         <!-- End .header -->
         {% block content %}
+        {% load cart_template_tags %}
         {% endblock content %}
     
         {% block extra_body %}
@@ -36,7 +46,7 @@
     
         {% block extra_scripts %}
         {% endblock extra_scripts %}
-        <script>
+        {% comment %} <script>
             (function(d,t) {
               var BASE_URL="https://app.chatwoot.com";
               var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
@@ -51,8 +61,23 @@
                 })
               }
             })(document,"script");
+          </script> {% endcomment %}
+          <script>
+            (function(d,t) {
+              var BASE_URL="https://app.chatwoot.com";
+              var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+              g.src=BASE_URL+"/packs/js/sdk.js";
+              g.defer = true;
+              g.async = true;
+              s.parentNode.insertBefore(g,s);
+              g.onload=function(){
+                window.chatwootSDK.run({
+                  websiteToken: 'cht23T9BExWE7H8oAxpVMXw9',
+                  baseUrl: BASE_URL
+                })
+              }
+            })(document,"script");
           </script>
-        
     </body>
 
     </html>

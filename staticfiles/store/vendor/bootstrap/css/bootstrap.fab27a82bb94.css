@@ -204,7 +204,7 @@ sup {
 }
 
 a {
-    color: #FD7F20;
+    color: #75E6DA;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
@@ -2114,8 +2114,8 @@ fieldset[disabled] a.btn {
 
 .btn-primary {
     color: #fff;
-    background-color: #FD7F20;
-    border-color: #FD7F20;
+    background-color: #75E6DA;
+    border-color: #75E6DA;
 }
 
 .btn-primary:hover {
@@ -2131,8 +2131,8 @@ fieldset[disabled] a.btn {
 
 .btn-primary.disabled,
 .btn-primary:disabled {
-    background-color: #FD7F20;
-    border-color: #FD7F20;
+    background-color: #75E6DA;
+    border-color: #75E6DA;
 }
 
 .btn-primary:active,
@@ -2361,16 +2361,16 @@ fieldset[disabled] a.btn {
 }
 
 .btn-outline-primary {
-    color: #FD7F20;
+    color: #75E6DA;
     background-color: transparent;
     background-image: none;
-    border-color: #FD7F20;
+    border-color: #75E6DA;
 }
 
 .btn-outline-primary:hover {
     color: #fff;
-    background-color: #FD7F20;
-    border-color: #FD7F20;
+    background-color: #75E6DA;
+    border-color: #75E6DA;
 }
 
 .btn-outline-primary:focus,
@@ -2380,7 +2380,7 @@ fieldset[disabled] a.btn {
 
 .btn-outline-primary.disabled,
 .btn-outline-primary:disabled {
-    color: #FD7F20;
+    color: #75E6DA;
     background-color: transparent;
 }
 
@@ -2388,8 +2388,8 @@ fieldset[disabled] a.btn {
 .btn-outline-primary.active,
 .show>.btn-outline-primary.dropdown-toggle {
     color: #fff;
-    background-color: #FD7F20;
-    border-color: #FD7F20;
+    background-color: #75E6DA;
+    border-color: #75E6DA;
 }
 
 .btn-outline-secondary {
@@ -2618,7 +2618,7 @@ fieldset[disabled] a.btn {
 
 .btn-link {
     font-weight: normal;
-    color: #FD7F20;
+    color: #75E6DA;
     border-radius: 0;
 }
 
@@ -2801,7 +2801,7 @@ tbody.collapse.show {
 .dropdown-item:active {
     color: #fff;
     text-decoration: none;
-    background-color: #FD7F20;
+    background-color: #75E6DA;
 }
 
 .dropdown-item.disabled,
@@ -3166,11 +3166,11 @@ tbody.collapse.show {
 
 .custom-control-input:checked~.custom-control-indicator {
     color: #fff;
-    background-color: #FD7F20;
+    background-color: #75E6DA;
 }
 
 .custom-control-input:focus~.custom-control-indicator {
-    box-shadow: 0 0 0 1px #fff, 0 0 0 3px #FD7F20;
+    box-shadow: 0 0 0 1px #fff, 0 0 0 3px #75E6DA;
 }
 
 .custom-control-input:active~.custom-control-indicator {
@@ -3213,7 +3213,7 @@ tbody.collapse.show {
 }
 
 .custom-checkbox .custom-control-input:indeterminate~.custom-control-indicator {
-    background-color: #FD7F20;
+    background-color: #75E6DA;
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='%23fff' d='M0 2h4'/%3E%3C/svg%3E");
 }
 
@@ -3412,7 +3412,7 @@ tbody.collapse.show {
 .nav-pills .nav-link.active,
 .show>.nav-pills .nav-link {
     color: #fff;
-    background-color: #FD7F20;
+    background-color: #75E6DA;
 }
 
 .nav-fill .nav-item {
@@ -4103,8 +4103,8 @@ tbody.collapse.show {
 .page-item.active .page-link {
     z-index: 2;
     color: #fff;
-    background-color: #FD7F20;
-    border-color: #FD7F20;
+    background-color: #75E6DA;
+    border-color: #75E6DA;
 }
 
 .page-item.disabled .page-link {
@@ -4120,7 +4120,7 @@ tbody.collapse.show {
     padding: 0.5rem 0.75rem;
     margin-left: -1px;
     line-height: 1.25;
-    color: #FD7F20;
+    color: #75E6DA;
     background-color: #fff;
     border: 1px solid #ddd;
 }
@@ -4195,7 +4195,7 @@ tbody.collapse.show {
 
 .badge-primary {
     color: #fff;
-    background-color: #FD7F20;
+    background-color: #75E6DA;
 }
 
 .badge-primary[href]:focus,
@@ -4476,7 +4476,7 @@ tbody.collapse.show {
     height: 1rem;
     line-height: 1rem;
     color: #fff;
-    background-color: #FD7F20;
+    background-color: #75E6DA;
     transition: width 0.6s ease;
 }
 
@@ -4563,8 +4563,8 @@ tbody.collapse.show {
 .list-group-item.active {
     z-index: 2;
     color: #fff;
-    background-color: #FD7F20;
-    border-color: #FD7F20;
+    background-color: #75E6DA;
+    border-color: #75E6DA;
 }
 
 .list-group-flush .list-group-item {
@@ -5493,7 +5493,7 @@ button.close {
 }
 
 .bg-primary {
-    background-color: #FD7F20 !important;
+    background-color: #75E6DA !important;
 }
 
 a.bg-primary:focus,
@@ -5597,7 +5597,7 @@ a.bg-dark:hover {
 }
 
 .border-primary {
-    border-color: #FD7F20 !important;
+    border-color: #75E6DA !important;
 }
 
 .border-secondary {
@@ -8371,7 +8371,7 @@ a.bg-dark:hover {
 }
 
 .text-primary {
-    color: #FD7F20 !important;
+    color: #75E6DA !important;
 }
 
 a.text-primary:focus,
