@@ -1,8 +1,9 @@
 {% extends "cyrus/base.html" %}
 {% load static %}
 {% block content %}
-<div class="owl-carousel owl-single home-slider">
-	<div class="item">
+
+	{% comment %} <div class="item">
+		<div class="owl-carousel owl-single home-slider">
 		<div class="untree_co-hero" style="background-image: url('{% static "cyrus/images/hd2.jpg" %}');">
 			<div class="container">
 				<div class="row align-items-center">
@@ -87,8 +88,55 @@
 			</div>
 		</div> <!-- /.ultralynks-hero -->
 	</div>
-	
-</div>
+	</div>
+	 {% endcomment %}
+	 
+	<div class="particlehead"></div>
+    <!-- <div class="container"> -->
+      <div class="site-blocks-cover">
+        <div class="container">
+          <div class="row align-items-center justify-content-center text-center">
+
+            <div class="col-md-12" data-aos="fade-up" data-aos-delay="400">
+
+              <div class="row justify-content-center mb-4">
+                <div class="col-md-10 text-center">
+                  <h1>Optimize funding for your upcoming <span class="typed-words"></span></h1>
+                  <p class="lead mb-5">Shop with freedom, pay with flexibility,<span clsas="d-block">and discover a whole new way to enjoy your purchases.</span><a href="#">--</a></p>
+                  <div><a data-fancybox data-ratio="2" href="https://play.google.com/store/games?pli=1" class="btn btn-secondary me-2 rounded">Get The App</a><a data-fancybox data-ratio="2" href="{% url "core:shop" %}" class="btn btn-secondary me-2 rounded">Explore Store</a></div>
+                </div>
+              </div>
+			  
+            </div>
+          </div>
+        </div>
+      </div>  
+      <!-- </div> -->
+
+
+      <section class="site-section">
+        <div class="container">
+          <div class="row">
+            <div class="col" data-aos="fade-in" data-aos-delay="0">
+              <img src="images/clients-05.svg" alt="Image" class="img-fluid">
+            </div>
+            <div class="col" data-aos="fade-in" data-aos-delay="100">
+              <img src="images/clients-02.svg" alt="Image" class="img-fluid">
+            </div>
+            <div class="col" data-aos="fade-in" data-aos-delay="200">
+              <img src="images/clients-03.svg" alt="Image" class="img-fluid">
+            </div>
+            <div class="col" data-aos="fade-in" data-aos-delay="300">
+              <img src="images/clients-01.svg" alt="Image" class="img-fluid">
+            </div>
+            <div class="col" data-aos="fade-in" data-aos-delay="400">
+              <img src="images/clients-04.svg" alt="Image" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </section>
+
+
 		{% comment %} <!-- Start Hero Section -->
 			<div class="hero">
 				<div class="container">
