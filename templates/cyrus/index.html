@@ -14,29 +14,31 @@
 
               <div class="row justify-content-center mb-4">
                 <div class="col-md-10 text-center">
+					<p class="mb-4"></p><br>
+					<br>
                   <h1>Optimize funding for your upcoming <span class="typed-words"></span></h1>
                   <div><a data-fancybox data-ratio="2" href="https://play.google.com/store/games?pli=1" class="btn btn-secondary me-2 rounded">Get The App</a><a data-fancybox data-ratio="2" href="{% url "core:shop" %}" class="btn btn-secondary me-2 rounded">Explore Store</a></div>
                 </div>
               </div>
-			  <div class="row align-items-stretch retro-layout">
+			  <div class="row align-items-center justify-content-center text-center align-items-stretch retro-layout">
 			
-				<div class="col-md-4">
+				<div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
 					<a href="single.html" class="h-entry mb-30 v-height gradient">
 	
-						<div class="featured-img" style="background-image: url('{% static "cyrus/box/images/img_2_horizontal.jpg" %}');"></div>
+						<div class="featured-img" style="background-image: url('https://img.freepik.com/premium-photo/home-appliances-gas-cooker-tv-cinema-refrigerator-air-conditioner-microwave-laptop-washing-machine_252025-693.jpg?size=626&ext=jpg&uid=R129613494&ga=GA1.1.572237020.1697398425&semt=ais');"></div>
 	
 						<div class="text">
 							<span class="date">Apr. 14th, 2022</span>
-							<h2>AI can now kill those annoying cookie pop-ups</h2>
+							<h2>electric blender mixer and juicer set</h2>
 						</div>
 					</a>
 					
 				</div>
 				
-				<div class="col-md-4">
+				<div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
 					<a href="single.html" class="h-entry mb-30 v-height gradient">
 	
-						<div class="featured-img" style="background-image: url('{% static "cyrus/box/images/img_3_horizontal.jpg" %}');"></div>
+						<div class="featured-img" style="background-image: url('https://img.freepik.com/premium-photo/set-contemporary-house-appliances-standing-parquet-floor_613961-331.jpg?size=626&ext=jpg&uid=R129613494&ga=GA1.1.572237020.1697398425&semt=ais');"></div>
 	
 						<div class="text">
 							<span class="date">Apr. 14th, 2022</span>
@@ -45,18 +47,7 @@
 					</a>
 					
 				</div>
-				<div class="col-md-4">
-					
-					<a href="single.html" class="h-entry v-height gradient">
-	
-						<div class="featured-img" style="background-image: url('{% static "cyrus/box/images/img_4_horizontal.jpg" %}');"></div>
-	
-						<div class="text">
-							<span class="date">Apr. 14th, 2022</span>
-							<h2>Thought you loved Python? Wait until you meet Rust</h2>
-						</div>
-					</a>
-				</div>
+				
 			
             </div>
           </div>
@@ -105,24 +96,45 @@
 					<!-- End Column 1 -->
 
 					<!-- Start Column 2 -->
-					{% for item in Item %}
 					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-						<a class="product-item" href="{{ item.get_absolute_url }}">
-							<img src="{{ item.image.url }}" class="img-fluid product-thumbnail">
-							<h3 class="product-title">{{ item.title }}</h3>
-							<strong class="product-price">{% if item.discount_price %}
-								<del>₵{{ item.price }}</del>
-								₵{{ item.discount_price }}
-								{% else %}
-								₵{{ item.price }}
-								{% endif %}</strong>
+						<a class="product-item" href="cart.html">
+							<img src="{% static "cyrus/images/product-1.png" %}" class="img-fluid product-thumbnail">
+							<h3 class="product-title">Nordic Chair</h3>
+							<strong class="product-price">$50.00</strong>
 
 							<span class="icon-cross">
 								<img src="{% static "cyrus/images/cross.svg" %}" class="img-fluid">
 							</span>
 						</a>
 					</div> 
-					{% endfor %}
+					<!-- End Column 2 -->
+
+					<!-- Start Column 3 -->
+					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+						<a class="product-item" href="cart.html">
+							<img src="{% static "cyrus/images/product-2.png" %}" class="img-fluid product-thumbnail">
+							<h3 class="product-title">Kruzo Aero Chair</h3>
+							<strong class="product-price">$78.00</strong>
+
+							<span class="icon-cross">
+								<img src="{% static "cyrus/images/cross.svg" %}" class="img-fluid">
+							</span>
+						</a>
+					</div>
+					<!-- End Column 3 -->
+
+					<!-- Start Column 4 -->
+					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+						<a class="product-item" href="cart.html">
+							<img src="{% static "cyrus/images/product-3.png" %}" class="img-fluid product-thumbnail">
+							<h3 class="product-title">Ergonomic Chair</h3>
+							<strong class="product-price">$43.00</strong>
+
+							<span class="icon-cross">
+								<img src="{% static "cyrus/images/cross.svg" %}" class="img-fluid">
+							</span>
+						</a>
+					</div>
 					<!-- End Column 2 -->
 				</div>
 			</div>
@@ -183,7 +195,7 @@
 
 					<div class="col-lg-5">
 						<div class="img-wrap">
-							<img src="{% static "cyrus/images/why-choose-us-img.jpg" %}" alt="Image" class="img-fluid">
+							<img src="https://img.freepik.com/free-photo/black-father-son-cooking-kitchen_23-2148096366.jpg?size=626&ext=jpg&uid=R129613494&ga=GA1.1.572237020.1697398425&semt=ais" alt="Image" class="img-fluid">
 						</div>
 					</div>
 
@@ -230,7 +242,7 @@
 			<div class="col-md-4">
 				<a href="single.html" class="h-entry mb-30 v-height gradient">
 
-					<div class="featured-img" style="background-image: url('{% static "cyrus/box/images/img_2_horizontal.jpg" %}');"></div>
+					<div class="featured-img" style="background-image: url('https://img.freepik.com/free-photo/metal-food-blender-close-up-with-fresh-exotic-tropic-fruits-it-kitchen-background-with-empty-space-blender-wooden-table-kitchen_639032-170.jpg?size=626&ext=jpg&uid=R129613494&ga=GA1.1.572237020.1697398425&semt=ais');"></div>
 
 					<div class="text">
 						<span class="date">Apr. 14th, 2022</span>
@@ -239,7 +251,7 @@
 				</a>
 				<a href="single.html" class="h-entry v-height gradient">
 
-					<div class="featured-img" style="background-image: url('{% static "cyrus/box/images/img_5_horizontal.jpg" %}');"></div>
+					<div class="featured-img" style="background-image: url('https://img.freepik.com/premium-photo/home-appliance-with-ribbons-discounts-interior_252025-682.jpg?size=626&ext=jpg&uid=R129613494&ga=GA1.1.572237020.1697398425&semt=ais');"></div>
 
 					<div class="text">
 						<span class="date">Apr. 14th, 2022</span>
@@ -250,7 +262,7 @@
 			<div class="col-md-4">
 				<a href="single.html" class="h-entry img-5 h-100 gradient">
 
-					<div class="featured-img" style="background-image: url('{% static "cyrus/box/images/img_1_vertical.jpg" %}');"></div>
+					<div class="featured-img" style="background-image: url('https://img.freepik.com/free-photo/elegant-smartphone-composition_23-2149437106.jpg?size=626&ext=jpg&uid=R129613494&ga=GA1.1.572237020.1697398425&semt=sph');"></div>
 
 					<div class="text">
 						<span class="date">Apr. 14th, 2022</span>
@@ -261,7 +273,7 @@
 			<div class="col-md-4">
 				<a href="single.html" class="h-entry mb-30 v-height gradient">
 
-					<div class="featured-img" style="background-image: url('{% static "cyrus/box/images/img_3_horizontal.jpg" %}');"></div>
+					<div class="featured-img" style="background-image: url('https://img.freepik.com/premium-photo/mobile-phone-isolated-white-background-from-different-angles_746318-321.jpg?size=626&ext=jpg&uid=R129613494&ga=GA1.1.572237020.1697398425&semt=sph');"></div>
 
 					<div class="text">
 						<span class="date">Apr. 14th, 2022</span>
@@ -270,7 +282,7 @@
 				</a>
 				<a href="single.html" class="h-entry v-height gradient">
 
-					<div class="featured-img" style="background-image: url('{% static "cyrus/box/images/img_4_horizontal.jpg" %}');"></div>
+					<div class="featured-img" style="background-image: url('https://img.freepik.com/free-photo/laptop-with-blank-black-screen-white-table_53876-97915.jpg?size=626&ext=jpg&uid=R129613494&ga=GA1.1.572237020.1697398425&semt=sph');"></div>
 
 					<div class="text">
 						<span class="date">Apr. 14th, 2022</span>
@@ -305,7 +317,7 @@
 								<img src="{% static "cyrus/images/shop3.png" %}" alt="Image" class="img-fluid">
 							</div>
 							<div class="pt-3">
-								<h3>Sumsung Phones</h3>
+								<h3>Samsung Phones</h3>
 								<p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio </p>
 								<p><a href="{% url "core:shop" %}">More</a></p>
 							</div>
@@ -318,7 +330,7 @@
 								<img src="{% static "cyrus/images/shop6.png" %}" alt="Image" class="img-fluid">
 							</div>
 							<div class="pt-3">
-								<h3>Apple MacBooks</h3>
+								<h3>Apple MacBook</h3>
 								<p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio </p>
 								<p><a href="{% url "core:shop" %}">More</a></p>
 							</div>
@@ -334,19 +346,19 @@
 			<div class="container">
 			  <div class="row">
 				<div class="col" data-aos="fade-in" data-aos-delay="0">
-				  <img src="images/clients-05.svg" alt="Image" class="img-fluid">
+				  <img src="{% static "cyrus/images/clients-05.svg" %}" alt="Image" class="img-fluid">
 				</div>
 				<div class="col" data-aos="fade-in" data-aos-delay="100">
-				  <img src="images/clients-02.svg" alt="Image" class="img-fluid">
+				  <img src="{% static "cyrus/images/clients-02.svg" %}" alt="Image" class="img-fluid">
 				</div>
 				<div class="col" data-aos="fade-in" data-aos-delay="200">
-				  <img src="images/clients-03.svg" alt="Image" class="img-fluid">
+				  <img src="{% static "cyrus/images/clients-03.svg" %}" alt="Image" class="img-fluid">
 				</div>
 				<div class="col" data-aos="fade-in" data-aos-delay="300">
-				  <img src="images/clients-01.svg" alt="Image" class="img-fluid">
+				  <img src="{% static "cyrus/images/clients-01.svg" %}" alt="Image" class="img-fluid">
 				</div>
 				<div class="col" data-aos="fade-in" data-aos-delay="400">
-				  <img src="images/clients-04.svg" alt="Image" class="img-fluid">
+				  <img src="{% static "cyrus/images/clients-04.svg" %}" alt="Image" class="img-fluid">
 				</div>
 			  </div>
 			</div>
@@ -377,7 +389,7 @@
 
 											<div class="testimonial-block text-center">
 												<blockquote class="mb-5">
-													<p>&ldquo; - "I love using Cyrus Consumer Finance for my shopping needs! It has made shopping so much more convenient for me. I can grab the latest fashion trends without worrying about immediate payments. The easy repayment options and low fees of Cyrus Consumer Finance have truly improved my shopping experience."&rdquo;</p>
+													<p>&ldquo;I love using Cyrus Consumer Finance for my shopping needs! It has made shopping so much more convenient for me. I can grab the latest fashion trends without worrying about immediate payments. The easy repayment options and low fees of Cyrus Consumer Finance have truly improved my shopping experience.&rdquo;</p>
 												</blockquote>
 
 												<div class="author-info">
@@ -400,7 +412,7 @@
 
 											<div class="testimonial-block text-center">
 												<blockquote class="mb-5">
-													<p>&ldquo;- "I can't imagine going back to traditional shopping after using Cyrus Consumer Finance. It's user-friendly, and the flexibility it offers with payments is a game-changer. I've made some significant purchases without a second thought, and it's been a lifesaver for managing my budget."&rdquo;</p>
+													<p>&ldquo;- "I can't imagine going back to traditional shopping after using Cyrus Consumer Finance. It's user-friendly, and the flexibility it offers with payments is a game-changer. I've made some significant purchases without a second thought, and it's been a lifesaver for managing my budget.&rdquo;</p>
 												</blockquote>
 
 												<div class="author-info">
@@ -423,7 +435,7 @@
 
 											<div class="testimonial-block text-center">
 												<blockquote class="mb-5">
-													<p>&ldquo; - "Cyrus Consumer Finance has given me the freedom to shop without the financial stress. I've used it for everything from electronics to home furnishings, and it's always delivered a seamless experience. Plus, their responsive customer support team provides peace of mind, knowing they're there to assist if needed."&rdquo;</p>
+													<p>&ldquo; Cyrus Consumer Finance has given me the freedom to shop without the financial stress. I've used it for everything from electronics to home furnishings, and it's always delivered a seamless experience. Plus, their responsive customer support team provides peace of mind, knowing they're there to assist if needed.&rdquo;</p>
 												</blockquote>
 
 												<div class="author-info">
