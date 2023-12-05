@@ -68,7 +68,8 @@
 
         <div class="container position-relative">
             <div class="site-navigation text-center dark">
-                <a href="{% url "core:home" %}" class="logo menu-absolute m-0"><img src="{% static "cyrus/images/logo-main.png" %}"></a>
+                {% comment %} <a class="navbar-brand" href="/">Cyrus<span>.</span></a><img src="{% static "cyrus/images/logo-main.png" %}">{% endcomment %}
+                <a href="{% url "core:home" %}" class="logo menu-absolute m-0"><img src="{% static "cyrus/images/main.png" %}"></a> 
 
                 <ul class="js-clone-nav pl-0 d-none d-lg-inline-block site-menu">
                     <li class="active"><a href="{% url "core:home" %}">Home</a></li>
@@ -141,6 +142,7 @@
                 <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
                     <span></span>
                 </a>
+                
             </div>
         </div>
     </div>
