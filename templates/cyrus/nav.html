@@ -67,8 +67,10 @@
     <div class="sticky-nav js-sticky-header">
 
         <div class="container position-relative">
+            
             <div class="site-navigation text-center dark">
                 {% comment %} <a class="navbar-brand" href="/">Cyrus<span>.</span></a><img src="{% static "cyrus/images/logo-main.png" %}">{% endcomment %}
+                
                 <a href="{% url "core:home" %}" class="logo menu-absolute m-0"><img src="{% static "cyrus/images/logo-c.png" %}" alt="Website Logo" id="logo"></a> 
 
                 <ul class="js-clone-nav pl-0 d-none d-lg-inline-block site-menu">
@@ -106,10 +108,6 @@
                     
                     
                 </ul>
-
-
-
-
                 <div class="menu-icons ">
 
                     <a href="#" class="btn-custom-search" id="btn-search">
@@ -131,14 +129,13 @@
                             <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
                         </svg>
                     </a>
-                    <a href="#" class=" user-nav burger  d-inline-block js-menu-toggle ml-auto float-right site-menu-toggle  d-lg-none" data-toggle="collapse" data-target="#main-navbar">
-                        <span></span>
-                    </a>
+                    
                     
                 </div> 
-                <a href="#" class=" ml-auto  site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
-                   
-                  </a>
+
+                  <a href="#" class="menu-absolute burger  d-inline-block js-menu-toggle ml-auto float-right site-menu-toggle  d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
                 
             </div>
         </div>

@@ -2172,14 +2172,14 @@ h5,
     color: #050A30 !important;
 }
 
-
-/* Burger */
-
 .burger {
     width: 28px;
     height: 32px;
     cursor: pointer;
     position: relative;
+    /* Change from "left" to "relative" */
+    left: 0;
+    /* Add left property to adjust its position */
 }
 
 .burger.light:before,
