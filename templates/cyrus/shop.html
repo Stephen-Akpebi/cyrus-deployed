@@ -40,9 +40,9 @@
 
         <div class="col-md-3">
           <ul class="list-unstyled categories">
-            <li><a href="#">New <span>2,919</span></a></li>
-            <li><a href="#">Men <span>5,381</span></a></li>
-            <li><a href="#">Women <span>7,119</span></a></li>
+            <li><a href="#">Electronics <span>2,919</span></a></li>
+            <li><a href="#">Furniture <span>5,381</span></a></li>
+            <li><a href="#">Watches<span>7,119</span></a></li>
             <li><a href="#">Jewelries <span>1,012</span></a></li>
             <li><a href="#">Accessories <span>919</span></a></li>
             <li><a href="#">Shoes <span>4,344</span></a></li>
@@ -52,7 +52,7 @@
         <div class="col-md-9">
           <div class="row">
             {% for item in Item %}
-            <div class="col-6 col-sm-6 col-md-4 mb-4 col-lg-3">
+            <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
               <div class="product-item">
                 <a href="{{ item.get_absolute_url }}" class="product-img">
 
