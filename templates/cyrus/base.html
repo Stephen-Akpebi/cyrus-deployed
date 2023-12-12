@@ -36,7 +36,15 @@
 
   <link rel="stylesheet" href="{% static "css/style.css" %}">
   {% comment %} <link rel="stylesheet" href="{% static "cyrus/box/css/style.css" %}"> {% endcomment %}
-
+  <style>
+    /* Inline style for the logo to override external styles if needed */
+    #logo {
+      width: 100px; /* Adjust the width to make the logo smaller */
+      height: auto;
+      display: block;
+      margin: 10px;
+    }
+  </style>
 	<link rel="stylesheet" href="{% static "cyrus/box/css/flatpickr.min.css" %}">
 	{% comment %} <link rel="stylesheet" href="{% static "cyrus/shop/css/style.css" %}"> {% endcomment %}
 		<title>Cyrus Consumer Finance</title>
