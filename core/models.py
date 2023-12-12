@@ -11,28 +11,20 @@ from django.conf import settings
 
 
 CATEGORY_CHOICES = (
-    ('Hand fans', 'Hand fans'),
-    ('Laptop bags', 'Laptop bags'),
-    ('Kimono and fabric', 'Kimono and fabric'),
-    ('Ipad bag', 'Ipad bag'),
-    ('Woven bags', 'Woven bags'),
-    ('Bible bags', 'Bible bags'),
-    ('Beads work', 'Beads work'),
-    ('Wallets', 'Wallets'),
-    ('Slippers', 'Slippers')
+    ('Electronics', 'Electronics'),
+    ('Clothing', 'Clothing'),
+    ('Furniture', 'Furniture'),
+    ('Watches', 'Watches'),
+    ('Shoes', 'Shoes'),
 )
 
 
 LABEL_CHOICES = (
-    ('Hand fans', 'Hand fans'),
-    ('Laptop bags', 'Laptop bags'),
-    ('Kimono and fabric', 'Kimono and fabric'),
-    ('Ipad bag', 'Ipad bag'),
-    ('Woven bags', 'Woven bags'),
-    ('Bible bags', 'Bible bags'),
-    ('Beads work', 'Beads work'),
-    ('Wallets', 'Wallets'),
-    ('Slippers', 'Slippers')
+    ('Electronics', 'Electronics'),
+    ('Clothing', 'Clothing'),
+    ('Furniture', 'Furniture'),
+    ('Watches', 'Watches'),
+    ('Shoes', 'Shoes'),
 )
 
 ADDRESS_CHOICES = (
@@ -41,15 +33,11 @@ ADDRESS_CHOICES = (
 )
 
 CATEGORY_SALES = (
-    ('Hand-fans', 'Hand-fans'),
-    ('Laptop-bags', 'Laptop-bags'),
-    ('Kimono-and-fabric', 'Kimono-and-fabric'),
-    ('Ipad-bag', 'Ipad-bag'),
-    ('Woven-bags', 'Woven-bags'),
-    ('Bible-bags', 'Bible-bags'),
-    ('Beads-work', 'Beads-work'),
-    ('Wallets', 'Wallets'),
-    ('Slippers', 'Slippers')
+    ('Electronics', 'Electronics'),
+    ('Clothing', 'Clothing'),
+    ('Furniture', 'Furniture'),
+    ('Watches', 'Watches'),
+    ('Shoes', 'Shoes'),
 )
 
 class UserProfile(models.Model):

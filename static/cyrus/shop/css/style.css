@@ -334,20 +334,44 @@ h4,
 
 .menu-icons {
     position: absolute;
-    right: 0;
-    top: 0;
+    top: 10px;
+    /* Adjust the top position as needed */
+    right: 10px;
+    /* Adjust the right position as needed */
+    display: flex;
+    /* Align icons horizontally */
 }
 
 .menu-icons .btn-custom-search {
     font-size: 16px;
     color: #000000;
     margin-right: 20px;
+    position: absolute;
+    top: 10px;
+    /* Adjust the top position as needed */
+    right: 10px;
+    /* Adjust the right position as needed */
+    display: flex;
+    /* Align icons horizontally */
 }
 
 .menu-icons .user-profile {
     font-size: 20px;
     color: #000000;
     margin-right: 20px;
+}
+
+.menu-icons .user-nav {
+    font-size: 20px;
+    color: #000000;
+    margin-right: 200px;
+    position: absolute;
+    top: 10px;
+    /* Adjust the top position as needed */
+    right: 10px;
+    /* Adjust the right position as needed */
+    display: flex;
+    /* Align icons horizontally */
 }
 
 @media (max-width: 991.98px) {
@@ -359,6 +383,13 @@ h4,
 .menu-icons .cart {
     color: #000000;
     font-size: 20px;
+    position: absolute;
+    top: 10px;
+    /* Adjust the top position as needed */
+    right: 10px;
+    /* Adjust the right position as needed */
+    display: flex;
+    /* Align icons horizontally */
 }
 
 @media (max-width: 991.98px) {
